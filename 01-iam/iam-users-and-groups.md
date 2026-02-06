@@ -48,3 +48,55 @@ los servicios según los permisos definidos por el grupo `Admin`.
 - IAM es un servicio global (no depende de regiones).
 - Los grupos simplifican la administración de permisos.
 - Los permisos determinan qué acciones puede realizar un usuario.
+
+## Inicio de sesión por primera vez como usuario IAM
+
+## Objetivo
+Iniciar sesión en la consola de AWS utilizando un usuario IAM por primera vez,
+verificando el flujo de autenticación y el cambio obligatorio de contraseña.
+
+## Pasos realizados
+
+### 1. Acceso a la página de inicio de sesión
+Accedí a la página de inicio de sesión de AWS para usuarios IAM, utilizando:
+- Account ID / Alias de la cuenta
+- Nombre de usuario IAM
+- Contraseña temporal generada al crear el usuario
+
+![Página de login usuario IAM](images/iam-login-page.png)
+
+---
+
+### 2. Cambio obligatorio de contraseña
+En el primer inicio de sesión, AWS solicitó cambiar la contraseña temporal
+por una nueva contraseña personalizada.
+
+Esto es una medida de seguridad para evitar el uso prolongado de credenciales
+temporales.
+
+![Cambio de contraseña primer login](images/iam-first-login-password-change.png)
+
+---
+
+### 3. Acceso a la consola como usuario IAM
+Una vez cambiada la contraseña, se accedió correctamente a la consola de AWS
+como usuario IAM.
+
+Desde este punto, el usuario solo puede realizar acciones permitidas por los
+permisos asignados a su grupo.
+
+![Consola AWS como usuario IAM](images/iam-console-logged-in.png)
+
+## Resultado
+El usuario IAM pudo iniciar sesión correctamente y acceder a la consola de AWS
+sin utilizar el usuario root.
+
+## Buenas prácticas aplicadas
+- Uso de usuario IAM en lugar de root
+- Cambio obligatorio de contraseña en el primer acceso
+- Acceso controlado mediante permisos de grupo
+
+## Aprendizajes
+- El primer login fuerza un cambio de contraseña por seguridad
+- Los permisos visibles dependen del grupo asignado
+- El usuario root no es necesario para operaciones diarias
